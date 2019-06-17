@@ -1,0 +1,44 @@
+name: nucleus
+version: 1.1
+description: Base plugin
+load: STARTUP
+author: psygate
+main: com.psygate.minecraft.spigot.sovereignty.nucleus.Nucleus
+prefix: nucleus
+database: false
+loadbefore: [ivory, gaia, amethyst, exordium, sanctuary, ruby, banda, prelude, sapphire]
+
+commands:
+  forcename:
+    default: op
+    description: Enforces a name on a player.
+    usage: /forcename <current_playername> <new_playername>
+    permission: nucleus.name.enforce
+
+  setplayercap:
+    default: op
+    description: Enforces a player number cap.
+    usage: /setplayercap <number > 0>
+    permission: nucleus.playercap.set
+
+  setwhitelistmessage:
+    default: op
+    description: Sets a whitelist message.
+    usage: /setwhitelistmessage <whitelist message>
+    permission: nucleus.whitelist.message.set
+
+  setplayercapmessage:
+    default: op
+    description: Sets a player cap reached message.
+    usage: /setplayercapmessage <player cap message>
+    permission: nucleus.playercap.message.set
+
+
+permissions:
+  nucleus.admin:
+    default: op
+    children:
+      nucleus.name.enforce: true
+      nucleus.playercap.set: true
+      nucleus.whitelist.message.set: true
+      nucleus.playercap.message.set: true

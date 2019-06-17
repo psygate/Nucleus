@@ -1,0 +1,39 @@
+sqlConfiguration:
+  DBType: MySQL
+  databaseName: nucleus
+  host: localhost
+  password: nucleus
+  username: nucleus
+  port: 3306
+
+  poolConfiguration:
+    connectionTimeout: 30000
+    idleTimeout: 60000
+    leakDetectionThreshold: 300000
+    maxLifetime: 1800000
+    maximumPoolSize: 7
+    minimumIdle: 4
+    poolName: Nucleus-Hikari-Pool
+
+  workerConfiguration:
+    maxIdleTime: 30000
+    maxQueueSize: 100000
+    maxWorkers: 7
+    minWorkers: 4
+    workerNumber: 3
+
+logging:
+  basedir: nucleus_logs
+
+playernamecache:
+  minSize: 100
+  maxSize: 1000
+  expireAfterAccess: 10m
+  expireAfterWrite:  5m
+
+workerpool:
+  maxIdleTime: 30000
+  maxQueueSize: 100000
+  maxWorkers: 7
+  minWorkers: 4
+  workerNumber: 3
